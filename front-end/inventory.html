@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CuraJoy- Inventory</title>
+  <link rel="stylesheet" href="./styles/inventory.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>CuraJoy</h2>
+      <div class="user-info">
+        <img src="./assets/CuraJoy-logo-bg-white.png" alt="User Avatar" class="avatar">
+        <p>ADMIN PAGE</p>
+        <span>INVENTORY</span>
+      </div>
+      <ul class="menu">
+        <li><a href="admin.html">Dashboard</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li>List of Medicines</li>
+        <li>Medicine Groups</li>
+        <li>Reports</li>
+        <li>Configuration</li>
+        <li>Contact Management</li>
+        <li>Notifications</li>
+        <li>Chat with Visitors</li>
+        <li>Application Settings</li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <header>
+        <div class="search-bar">
+          <input type="text" placeholder="Search for anything here...">
+        </div>
+        <div class="actions">
+            <p><b> <span id="currentTime"></span></b></p>
+          <button id="logout-btn">Logout</button>
+        </div>
+      </header>
+      <section class="inventory">
+        <h1>Inventory</h1>
+        <div class="inventory-summary">
+          <div class="card">
+            <p>298</p>
+            <p>Medicines Available</p>
+            <a href="#">View Full List</a>
+          </div>
+          <div class="card">
+            <p>02</p>
+            <p>Categories</p>
+            <a href="#">View Categories List</a>
+          </div>
+          <div class="card">
+            <p>01</p>
+            <p>Shortage and Complaints</p>
+            <a href="#">Resolve Now</a>
+          </div>
+        </div>
+        <button class="add-item-btn">+ Add New Item</button>
+
+<!-- add product -->
+        <div class="modal" id="add-product-modal">
+            <div class="modal-content">
+              <span class="close" id="close-modal">&times;</span>
+              <h2>Add Product</h2>
+              <form id="add-product-form">
+                <label for="product-code">Product Code:</label>
+                <input type="text" id="product-code" required />
+          
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" required />
+          
+                <label for="product-category">Product Category:</label>
+                <input type="text" id="product-category" required />
+          
+                <label for="product-description">Product Description:</label>
+                <textarea id="product-description" required></textarea>
+          
+                <label for="product-price">Product Price (Per Piece):</label>
+                <input type="number" id="product-price" required />
+          
+                <label for="tax-category">Tax Category:</label>
+                <input type="text" id="tax-category" required />
+          
+                <label for="min-order-quantity">Minimum Order Quantity:</label>
+                <input type="number" id="min-order-quantity" required />
+          
+                <label for="product-image">Add Product Images:</label>
+                <input type="file" id="product-image" />
+          
+                <button type="submit">Add Product</button>
+              </form>
+            </div>
+          </div>
+          
+    </div>
+        <footer class="footer">
+            <p>&copy; 2025 Practice Website. Developed in January 2025.</p>
+        </footer>
+  
+
+    </section>
+    </main>
+    </div>
+    <script>
+    function displayCurrentDateTime() {
+
+        let now = new Date();
+      
+        let formattedDateTime = now.toISOString().slice(0, 19).replace('T', ' ');
+      
+        document.getElementById("currentTime").textContent = formattedDateTime;
+      
+      }
+      // Call the function to display the current time on page load
+      
+      displayCurrentDateTime();
+      
+  </script>
+
+  <script src="./scripts/inventory.js"></script>
+</body>
+</html>
