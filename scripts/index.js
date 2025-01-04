@@ -1,23 +1,24 @@
-// Theme toggle functionality
-document.getElementById("themeToggle").addEventListener("change", function () {
-    if (this.checked) {
-        document.body.classList.remove("light-theme");
-        document.body.classList.add("dark-theme");
-        document.querySelector("header").classList.remove("light-theme");
-        document.querySelector("header").classList.add("dark-theme");
-    } else {
-        document.body.classList.remove("dark-theme");
-        document.body.classList.add("light-theme");
-        document.querySelector("header").classList.remove("dark-theme");
-        document.querySelector("header").classList.add("light-theme");
-    }
+// Theme
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("themeToggle");
+
+    // Toggle between light and dark themes
+    themeToggle.addEventListener("change", () => {
+        const isDarkMode = themeToggle.checked;
+        const body = document.body;
+        const header = document.querySelector("header");
+
+        body.classList.toggle("dark-theme", isDarkMode);
+        body.classList.toggle("light-theme", !isDarkMode);
+        header.classList.toggle("dark-theme", isDarkMode);
+        header.classList.toggle("light-theme", !isDarkMode);
+    });
 });
 
 
 
 
-
-
+//Login-SignUp Button
 document.addEventListener("DOMContentLoaded", () => {
     const loginBtn = document.getElementById("loginSignupBtn");
     const modal = document.getElementById("loginModal");
@@ -27,188 +28,173 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalTitle = document.getElementById("modalTitle");
     const submitBtn = document.getElementById("submitBtn");
 
-    let users = JSON.parse(localStorage.getItem("users")) || {}; // Load users from localStorage
+    const users = JSON.parse(localStorage.getItem("users")) || {};
 
-    // Handle Login/Signup button click
-    loginBtn.addEventListener("click", function () {
+    //Open/close modal and handle logout
+    loginBtn.addEventListener("click", () => {
         if (loginBtn.textContent === "Login") {
-            modalTitle.textContent = "Login";
-            submitBtn.textContent = "Login";
-            toggleToSignup.style.display = "block";
-            modal.style.display = "block";
-        } else if (loginBtn.textContent === "Logout") {
-            localStorage.removeItem("isLoggedIn");
-            localStorage.removeItem("currentUser");
-            loginBtn.textContent = "Login";
-            alert("Logged out successfully.");
-            window.location.reload();
-        }
-    });
-
-    // Close the modal
-    closeModal.addEventListener("click", function () {
-        modal.style.display = "none";
-    });
-
-    // Switch between Login and Signup
-    toggleToSignup.addEventListener("click", function () {
-        if (modalTitle.textContent === "Login") {
-            modalTitle.textContent = "Sign Up";
-            submitBtn.textContent = "Sign Up";
-            toggleToSignup.textContent = "Already have an account? Login";
+            openModal("Login");
         } else {
-            modalTitle.textContent = "Login";
-            submitBtn.textContent = "Login";
-            toggleToSignup.textContent = "Don't have an account? Sign Up";
+            logoutUser();
         }
     });
 
-    // Handle form submission for Login or Signup
-    authForm.addEventListener("submit", function (event) {
+    closeModal.addEventListener("click", () => (modal.style.display = "none"));
+
+    toggleToSignup.addEventListener("click", toggleAuthMode);
+
+    authForm.addEventListener("submit", handleAuth);
+
+    //Open modal
+    function openModal(mode) {
+        modalTitle.textContent = mode;
+        submitBtn.textContent = mode;
+        toggleToSignup.style.display = mode === "Login" ? "block" : "none";
+        modal.style.display = "block";
+    }
+
+    //Toggle between Login/Signup
+    function toggleAuthMode() {
+        const isLogin = modalTitle.textContent === "Login";
+        modalTitle.textContent = isLogin ? "Sign Up" : "Login";
+        submitBtn.textContent = modalTitle.textContent;
+        toggleToSignup.textContent = isLogin
+            ? "Already have an account? Login"
+            : "Don't have an account? Sign Up";
+    }
+
+    // Handling Login or Signup
+    function handleAuth(event) {
         event.preventDefault();
         const email = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
+        if (!email || !password) return alert("Please fill out all fields.");
+
         if (modalTitle.textContent === "Login") {
             if (email === "admin@empher.com" && password === "Admin@1234") {
-                alert("Logged in as Admin");
-                localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("role", "admin");
-                window.location.href = "admin.html";
-            } else if (users[email] && users[email] === password) {
-                alert("Logged in successfully.");
-                localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("currentUser", email);
-                loginBtn.textContent = "Logout";
-                modal.style.display = "none";
-                window.location.href = "index.html";
+                loginAsAdmin();
+            } else if (users[email] === password) {
+                loginUser(email);
             } else {
-                alert("Not found, Please check credentials or Sign Up.");
+                alert("Invalid credentials. Please try again.");
             }
-        } else if (modalTitle.textContent === "Sign Up") {
-            if (email && password) {
-                if (users[email]) {
-                    alert("User already exists. Please login.");
-                } else {
-                    users[email] = password; // Add user to localStorage
-                    localStorage.setItem("users", JSON.stringify(users));
-                    alert("Account created successfully. Please login.");
-                    modalTitle.textContent = "Login";
-                    submitBtn.textContent = "Login";
-                    toggleToSignup.textContent = "Don't have an account? Sign Up";
-                }
-            } else {
-                alert("Please provide valid email and password.");
-            }
-        }
-    });
-
-    // Show/Hide password functionality
-    document.getElementById("showPassword").addEventListener("click", function () {
-        const passwordField = document.getElementById("password");
-        passwordField.type = passwordField.type === "password" ? "text" : "password";
-    });
-
-    // Check login status on page load
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    const currentUser = localStorage.getItem("currentUser");
-    if (isLoggedIn === "true" && currentUser) {
-        loginBtn.textContent = "Logout";
-    } else {
-        loginBtn.textContent = "Login";
-    }
-});
-// Show/Hide password functionality
-document.getElementById("showPassword").addEventListener("change", function () {
-    const passwordField = document.getElementById("password");
-    if (this.checked) {
-        passwordField.type = "text"; // Show password
-    } else {
-        passwordField.type = "password"; // Hide password
-    }
-});
-
-
-
-
-
-// Get elements
-const cityInput = document.getElementById('cityInput');
-const cityDropdown = document.getElementById('cityDropdown');
-const cityItems = cityDropdown.getElementsByTagName('li');
-
-// Show the dropdown when the user starts typing
-cityInput.addEventListener('focus', function() {
-    cityDropdown.style.display = 'block';  // Show dropdown
-});
-
-cityInput.addEventListener('input', function() {
-    const filter = cityInput.value.toLowerCase();  // Get user input
-    let hasMatches = false;
-
-    for (let i = 0; i < cityItems.length; i++) {
-        const cityText = cityItems[i].textContent.toLowerCase();
-        if (cityText.indexOf(filter) > -1) {
-            cityItems[i].style.display = '';  // Show matching cities
-            hasMatches = true;
         } else {
-            cityItems[i].style.display = 'none';  // Hide non-matching cities
+            if (users[email]) {
+                alert("User already exists. Please log in.");
+            } else {
+                users[email] = password;
+                localStorage.setItem("users", JSON.stringify(users));
+                alert("Account created successfully. Please log in.");
+                openModal("Login");
+            }
         }
     }
 
-    // Hide the dropdown if no matching cities
-    if (!hasMatches) {
-        cityDropdown.style.display = 'none';
+    // LogIn as Admin
+    function loginAsAdmin() {
+        alert("Logged in as Admin.");
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("role", "admin");
+        window.location.href = "admin.html";
+    }
+
+    // Log in as User
+    function loginUser(email) {
+        alert("Logged in successfully.");
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("currentUser", email);
+        loginBtn.textContent = "Logout";
+        modal.style.display = "none";
+    }
+
+    // Logout User
+    function logoutUser() {
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("currentUser");
+        loginBtn.textContent = "Login";
+        alert("Logged out successfully.");
+        window.location.reload();
+    }
+
+    // Initializing the Login state
+    if (localStorage.getItem("isLoggedIn")) {
+        loginBtn.textContent = "Logout";
     }
 });
 
-// Select city and set input value
-for (let i = 0; i < cityItems.length; i++) {
-    cityItems[i].addEventListener('click', function() {
-        cityInput.value = cityItems[i].textContent;
-        cityDropdown.style.display = 'none';  // Hide dropdown after selection
-    });
-}
-
-// Hide the dropdown if clicked outside of it
-document.addEventListener('click', function(event) {
-    if (!cityInput.contains(event.target) && !cityDropdown.contains(event.target)) {
-        cityDropdown.style.display = 'none';
-    }
-});
 
 
 
 
 
-
+//City Search Drop-Down
 document.addEventListener("DOMContentLoaded", () => {
-    // Initialize cart from localStorage or empty object
-    const cart = JSON.parse(localStorage.getItem("cart")) || {};
+    const cityInput = document.getElementById("cityInput");
+    const cityDropdown = document.getElementById("cityDropdown");
+    const cityItems = cityDropdown.getElementsByTagName("li");
 
-    // Handle Add to Cart button click
-    document.querySelectorAll(".add-to-cart").forEach(button => {
-        button.addEventListener("click", () => {
-            const productId = button.getAttribute("data-product-id");
-            const productName = button.getAttribute("data-name");
-            const productPrice = parseInt(button.getAttribute("data-price"));
+    cityInput.addEventListener("focus", () => {
+        cityDropdown.style.display = "block";
+    });
 
-            // Check if product is already in cart
-            if (cart[productId]) {
-                cart[productId].quantity += 1; // Increase quantity
-            } else {
-                cart[productId] = {
-                    name: productName,
-                    price: productPrice,
-                    quantity: 1
-                };
-            }
+    cityInput.addEventListener("input", () => {
+        const filter = cityInput.value.toLowerCase();
+        let hasMatches = false;
 
-            // Save updated cart to localStorage
-            localStorage.setItem("cart", JSON.stringify(cart));
+        Array.from(cityItems).forEach((item) => {
+            const matches = item.textContent.toLowerCase().includes(filter);
+            item.style.display = matches ? "" : "none";
+            if (matches) hasMatches = true;
+        });
 
-            // Show confirmation alert
-            alert(`${productName} has been added to the cart.`);
+        cityDropdown.style.display = hasMatches ? "block" : "none";
+    });
+
+    Array.from(cityItems).forEach((item) => {
+        item.addEventListener("click", () => {
+            cityInput.value = item.textContent;
+            cityDropdown.style.display = "none";
         });
     });
+
+    document.addEventListener("click", (event) => {
+        if (!cityInput.contains(event.target) && !cityDropdown.contains(event.target)) {
+            cityDropdown.style.display = "none";
+        }
+    });
 });
+
+
+
+
+// Add to Cart Button
+document.addEventListener("DOMContentLoaded", () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+    document.querySelectorAll(".add-to-cart").forEach((button) => {
+        button.addEventListener("click", () => {
+            const productId = button.dataset.productId;
+            const productName = button.dataset.name;
+            const productPrice = parseFloat(button.dataset.price);
+
+            addToCart(productId, productName, productPrice);
+        });
+    });
+
+    function addToCart(productId, name, price) {
+        if (cart[productId]) {
+            cart[productId].quantity += 1;
+        } else {
+            cart[productId] = { name, price, quantity: 1 };
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(`${name} has been added to the cart.`);
+    }
+});
+
+
+
+
+
