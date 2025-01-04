@@ -1,23 +1,3 @@
-// Theme toggle functionality
-document.getElementById("themeToggle").addEventListener("change", function () {
-    if (this.checked) {
-        document.body.classList.remove("light-theme");
-        document.body.classList.add("dark-theme");
-        document.querySelector("header").classList.remove("light-theme");
-        document.querySelector("header").classList.add("dark-theme");
-    } else {
-        document.body.classList.remove("dark-theme");
-        document.body.classList.add("light-theme");
-        document.querySelector("header").classList.remove("dark-theme");
-        document.querySelector("header").classList.add("light-theme");
-    }
-});
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const loginBtn = document.getElementById("loginSignupBtn");
     const modal = document.getElementById("loginModal");
