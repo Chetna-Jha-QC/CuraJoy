@@ -8,18 +8,18 @@
 
     <link rel="stylesheet" href="./styles/index.css">
 </head>
-<body class="light-theme"> <!-- Default is light theme -->
+<body class="light-theme"> 
 
     <!-- Header Section -->
     <header>
         <div class="header-container">
-            <!-- First Section -->
             <div class="header-section-1">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="./assets/CuraJoy-logo-transparent.png" alt="CuraJoy Logo" width="100px" height="100px"> <!-- Add your logo image here -->
+                        <img src="./assets/CuraJoy-logo-transparent.png" alt="CuraJoy Logo" width="100px" height="100px">
                     </a>
                 </div>
+
                 <div class="location">
                     <input type="text" id="cityInput" placeholder="Select City 🗺️" autocomplete="off">
                     <ul id="cityDropdown" class="dropdown-list">
@@ -33,35 +33,40 @@
                 <div class="website-name">
                     <h1>CuraJoy</h1>
                 </div>
+
                 <div class="theme-toggle">
                     <label class="switch">
                         <input type="checkbox" id="themeToggle">
                         <span class="slider round"></span>
                     </label>
                 </div>
+
                 <div class="auth">
                     <button id="loginSignupBtn">Login | SignUp</button>
                 </div>
+
                 <div class="cart">
-                    <a href="cart.html"><img src="./assets/cart.png" alt="Cart" width="50px" height="50px"> <!-- Add your cart icon image here --></a>
+                    <a href="./cart.html"><img src="./assets/cart.png" alt="Cart" width="50px" height="50px"></a>
                 </div>
             </div>
 
-            <!-- Second Section -->
+
             <div class="header-section-2">
                 <div class="search-bar">
                     <input type="text" placeholder="Search Products">
                 </div>
+
                 <div class="upload-prescription">
                     <input type="file" id="prescriptionUpload" />
                     <label for="prescriptionUpload">Upload Prescription</label>
                 </div>
+
                 <div class="random-offer">
                     <span>New Year Special Offer</span>
                 </div>
             </div>
 
-            <!-- Third Section (Nav-bar) -->
+
             <div class="navbar">
                 <ul>
                     <li><a href="#">Medicine</a>
@@ -76,9 +81,9 @@
                             <li><a href="#">Respiratory</a></li>
                             <li><a href="#">EyeCare</a></li>
                             <li><a href="#">Medicine Index</a></li>
-                        <!--  -->
                         </ul>
                     </li>
+
                     <li><a href="./seasonessentials.html">Season Essentials</a></li>
                     <li><a href="#">Vitamins, Nutrients, Drinks</a>
                         <ul class="dropdown">
@@ -104,25 +109,27 @@
                             <li><a href="#">Green Coffee</a></li>
                         </ul>
                     </li>
+                    
                     <li><a href="#">Health</a>
                         <ul class="dropdown">
                             <li><a href="#">Anti-Pollution</a></li>
                             <li><a href="#">Fitness Supplements</a></li>
                         </ul>
                     </li>
+                    
                     <li><a href="#">Elderly and Baby</a>
                         <ul class="dropdown">
                             <li><a href="#">Old-age Care</a></li>
                             <li><a href="#">Baby-care</a></li>
                         </ul>
                     </li>
-                    <li><a href="firstaid.html">First-Aid</a></li>
+                    <li><a href="./firstaid.html">First-Aid</a></li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <!-- Modal (Login or SignUp Popup) -->
+    <!-- Modal - Login or SignUp Popup -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeModal">&times;</span>
@@ -131,9 +138,9 @@
                 <input type="email" id="username" placeholder="Email" required>
                 <input type="password" id="password" placeholder="Password" required>
                 <label><input type="checkbox" id="showPassword"> Show Password</label><br>
-                <!-- <label><input type="checkbox" id="forgotPassword"> Forgot Password</label><br> -->
                 <button type="submit" id="submitBtn">Login</button>
             </form>
+
             <div id="toggleAuth">
                 <p><span id="toggleToSignup">Sign Up</span></p>
             </div>
@@ -144,11 +151,8 @@
         <img style="width: 100%;" src="./assets/full banner2.webp" alt="">
     </div>
     <!-- Body  -->
-    <div id="careplan_img">
-        <img style="width: 100%;" src="./assets/banner4.png" alt="">
-    </div>
     <!-- Category -->
-     <!-- Shop by Health Concerns Section -->
+    <!-- Shop by Health Concerns Section -->
     <section class="health-concerns">
         <h2 style="color: #3d8d69;">Shop by health concerns</h2>
         <div class="concerns-container">
@@ -181,6 +185,7 @@
                     Add to Cart
                 </button>
             </div>
+  
             <div class="product-card">
                 <img src="./assets/healthconcerns/nevia.avif" alt="Nivea Cream">
                 <p>Nivea Multi-Purpose Creme | Protects & Moisturises skin                </p>
@@ -189,6 +194,7 @@
                     Add to Cart
                 </button>
             </div>
+  
             <div class="product-card">
                 <img src="./assets/healthconcerns/honey.avif" alt="Sri Tattva Honey">
                 <p>Sri Tattva Honey</p>
@@ -197,6 +203,7 @@
                     Add to Cart
                 </button>
             </div>
+  
             <div class="product-card">
                 <img src="./assets/healthconcerns/tea2.webp" alt="Tetley">
                 <p>Tetley Green Tea Immune with Added Vitamin C Tea Bag</p>
@@ -205,6 +212,7 @@
                     Add to Cart
                 </button>
             </div>
+  
             <div class="product-card">
                 <img src="./assets/healthconcerns/vaporizer.avif" alt="Vaporizers">
                 <p>Asbob Healthcare 3 in 1 Vaporizers</p>
@@ -213,6 +221,7 @@
                     Add to Cart
                 </button>
             </div>
+  
             <div class="product-card">
                 <img src="./assets/healthconcerns/hotbag.avif" alt="Hot Water Bag">
                 <p>Hot Water Bag</p>
@@ -221,6 +230,7 @@
                     Add to Cart
                 </button>
             </div>
+  
             <div class="product-card">
                 <img src="./assets/honey_dabur.jpg" alt="Dabur Honey">
                 <p>Dabur Honey - 1Kg</p>
@@ -229,6 +239,7 @@
                     Add to Cart
                 </button>
             </div>
+  
             <div class="product-card">
                 <img src="./assets/ITEM.avif" alt="elovera lotion">
                 <p>Elovera Ceramide & Probiotic Based AD Lotion</p>
@@ -255,6 +266,7 @@
                     Add to Cart
                 </button>
             </div>
+  
             <div class="checkup-item">
                 <p>Good Health Silver Package</p>
                 <p>₹699 <span class="discount">50% off</span></p>
@@ -262,6 +274,7 @@
                     Add to Cart
                 </button>
             </div>
+  
             <div class="checkup-item">
                 <p>Comprehensive Silver Full Body Checkup</p>
                 <p>₹1599 <span class="discount">10% off</span></p>
@@ -271,12 +284,12 @@
             </div>
         </div>
     </section>
-    <!-- section ends -->
-
+    <!-- section ends here -->
+ 
     <div id="careplan_img">
         <img style="width: 100%;" src="./assets/feature/docbanner.jpg" alt="">
     </div>
-     <!-- next section -->
+     <!-- next section starts-->
 
      <!-- Featured Brands Section -->
     <section class="brands-section">
@@ -301,24 +314,30 @@
             <div class="product-card">
                 <img src="./assets/immu/immune/T0.webp" alt="Green Tea">
             </div>
+
             <div class="product-card">
                 <img src="./assets/immu/immune/T1.avif" alt="Green Tea">
             </div>
+
             <div class="product-card">
                 <img src="./assets/immu/immune/T3.avif" alt="Green Tea">
             </div>
+
             <div class="product-card">
                 <img src="./assets/immu/immune/T4.avif" alt="Green Tea">
             </div>
+
             <div class="product-card">
                 <img src="./assets/immu/immune/T5.webp" alt="Green Tea">
            </div>
+
            <div class="product-card">
             <img src="./assets/immu/immune/T6.avif" alt="Green Tea">
            </div>
+
            <div class="product-card">
             <img src="./assets/immu/immune/T7.avif" alt="Green Tea">
-           </div>
+           </div>            
             
     </section>
 
@@ -330,34 +349,42 @@
                 <img src="./assets/PersonalCare/SkinCare.webp" alt="Skin Care">
                 <p>Skin Care</p>
             </div>
+        
             <div class="care-item">
                 <img src="./assets/PersonalCare/HairCare.webp" alt="Hair Care">
                 <p>Hair Care</p>
             </div>
+        
             <div class="care-item">
                 <img src="./assets/PersonalCare/BabyCare.avif" alt="Baby Care">
                 <p>Baby Care</p>
             </div>
+        
             <div class="care-item">
                 <img src="./assets/PersonalCare/Elderly care.webp" alt="Elderly Care">
                 <p>Elderly Care</p>
             </div>
+        
             <div class="care-item">
                 <img src="./assets/PersonalCare/MenGrooming.webp" alt="Men Grooming">
                 <p>Men Grooming</p>
             </div>
+        
             <div class="care-item">
                 <img src="./assets/PersonalCare/OralCare.webp" alt="Oral Care">
                 <p>Oral Care</p>
             </div>
+        
             <div class="care-item">
                 <img src="./assets/PersonalCare/Wellness.avif" alt="Sexual Wellness">
                 <p>Sexual Wellness</p>
             </div>
+        
             <div class="care-item">
                 <img src="./assets/PersonalCare/WomenCare.avif" alt="Women Care">
                 <p>Women Care</p>
             </div>
+        
             <div class="care-item">
                 <img src="./assets/PersonalCare/PetCare.webp" alt="Pet Care">
                 <p>Pet Care</p>
@@ -440,7 +467,7 @@
                     <a href="#"><img src="./assets/icon/medium.png" alt="Medium"></a>
                 </div>
                 <p>Want daily dose of health?</p>
-                <button class="signup-button">SIGN UP</button>
+                <button class="signup-button">Subscribe</button>
             </div>
     
             <!-- Column 5: Download App -->
@@ -455,5 +482,6 @@
     
     <!-- scripts -->
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/dark-light.js"></script>
 </body>
 </html>
