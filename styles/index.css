@@ -1,0 +1,681 @@
+/* Light Theme */
+body.light-theme {
+    background-color: #fff;
+    color: rgb(10, 125, 4);
+}
+
+header.light-theme {
+    background-color: #f0f0f0;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: #26292d;
+    color: #e0e0e0;
+}
+
+header.dark-theme {
+    background-color: #26292d;
+}
+
+/* Common Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    width: 100%;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Header - Section 1 */
+.header-section-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-section-1 .logo a img {
+    padding-left: 20px;
+    max-width: 150px;
+}
+
+.header-section-1 .location input {
+    padding: 1px;
+    width: 150px;
+}
+
+.header-section-1 .theme-toggle {
+    display: flex;
+    align-items: center;
+}
+
+/* Smaller Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px; /* Decrease width */
+    height: 20px; /* Decrease height */
+}
+
+.switch input {
+    opacity: 0; /* Hide the default checkbox input */
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: palevioletred;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    left: 4px;
+    margin-top: 8px;
+    bottom: 3px;
+    background-color: yellow;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    background-color: white;
+
+}
+
+.header-section-1 .auth button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.header-section-1 .cart a {
+    padding: 10px;
+}
+
+.header-section-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-section-2 .search-bar input,
+.header-section-2 .upload-prescription input {
+    border-radius: 10px;
+    border-color: blue;
+    margin: 25px;
+    padding: 10px;
+}
+
+.header-section-2 .random-offer {
+    margin-right: 40px;
+    font-weight: bold;
+}
+
+/* Navbar */
+.navbar ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    list-style: none;
+    position: relative;
+}
+
+.navbar ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul li:hover .dropdown {
+    display: block;
+}
+
+.h2,
+.navbar ul li a {
+    font-size-adjust: auto;
+    text-decoration: underline;
+    color: rgb(90, 95, 193);
+    padding: 10px;
+    display: block;
+}
+
+.navbar ul li a:hover {
+    background-color: #ddd;
+}
+
+.navbar ul li .dropdown li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Modal for Login */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #f0eef4;
+    color: #2196F3;
+    margin: 15% auto;
+    padding: 20px;
+    width: 40%;
+}
+
+#closeModal {
+    font-size: 28px;
+    font-weight: bold;
+    color: #a62020;
+    float: right;
+}
+
+#closeModal:hover,
+#closeModal:focus {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Styling for the location input and dropdown */
+.location {
+    position: relative;
+    width: 200px;
+}
+
+#cityInput {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#cityDropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #343030;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 999;
+    border-radius: 4px;
+}
+
+
+
+#cityDropdown li {
+    padding: 10px;
+    cursor: pointer;
+    color: #222b23;
+}
+
+#cityDropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+/* 
+////////////////////////////////////////////////////////////// */
+
+
+
+/* Styling for the Login/Signup Modal and other elements */
+
+/* Modal for Login/SignUp */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 40%;
+}
+
+#closeModal {
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    float: right;
+}
+
+#closeModal:hover,
+#closeModal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+#toggleAuth {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#toggleAuth span {
+    color: #2196F3;
+    cursor: pointer;
+}
+
+#toggleAuth span:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px; /* Reduce padding */
+    gap: 10px; /* Adjust the gap between elements */
+}
+
+#logo {
+    margin-right: 10px; /* Adjust spacing for the logo */
+}
+
+#search-bar, #city-selector, #theme-toggle, #login-signup, #cart-icon {
+    margin: 0 2px; /* Reduce margins */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Reduce gap between navbar items */
+}
+
+
+
+
+/* section for products */
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h2 {
+    color: #100f0d;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Health Concerns Section */
+.health-concerns {
+    padding: 20px;
+}
+
+.concerns-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.concern-item {
+    text-align: center;
+}
+
+.concern-item img {
+    width: 100px;
+    border-radius: 10px;
+}
+
+/* Product Section Styling */
+.product-section {
+    padding: 20px;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 180px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.discount {
+    color: green;
+    font-weight: bold;
+}
+
+/* Health Checkup Section */
+.health-checkups {
+    padding: 20px;
+}
+
+.checkup-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.checkup-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* next section */
+
+
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Section Styling with Reduced Width */
+section {
+    max-width: 900px;  /* Reduced section width */
+    margin: 0 auto;
+    padding: 30px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Heading Styling */
+h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Brands Section */
+.brands-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.brands-container img {
+    width: 80px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Product Section */
+.product-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    width: 180px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.discount {
+    color: green;
+    font-weight: bold;
+}
+
+/* Personal Care Section */
+.personal-care-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.care-item img {
+    width: 100px;
+    border-radius: 10px;
+}
+
+
+
+
+/* footer */
+
+/* Footer Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #fdfaf6;
+    padding: 40px;
+    border-top: 1px solid #ddd;
+    color: #333;
+}
+
+/* Footer Columns */
+.footer-column {
+    flex: 1;
+    min-width: 180px;
+    margin-right: 20px;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #5735a0;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Sign Up Button */
+.signup-button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.signup-button:hover {
+    background-color: #e65a50;
+}
+
+/* App Store Buttons */
+.footer-column img {
+    /* width: 150px; */
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+
+
+/* Add to Cart button styles */
+.add-to-cart {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #3d8d69; /* Greenish color to match the section title */
+    color: #fff; /* White text */
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover effect for the button */
+.add-to-cart:hover {
+    background-color: #2f6d52; /* Darker green */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Active effect for the button */
+.add-to-cart:active {
+    transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* Add some spacing between buttons and other elements */
+.product-card .add-to-cart {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%; /* Make the button span the full width of the card */
+}
