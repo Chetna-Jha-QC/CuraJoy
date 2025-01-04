@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CuraJoy - Dashboard</title>
+  <link rel="stylesheet" href="./styles/admindashboard.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>CuraJoy</h2>
+      <div class="user-info">
+        <img src="./assets/CuraJoy-logo-bg-white.png" alt="User Avatar" class="avatar">
+        <p>ADMIN PAGE</p>
+        <span> Admin</span>
+      </div>
+      <ul class="menu">
+        <li><a href="admin.html">Dashboard</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li>List of Medicines</li>
+        <li>Medicine Groups</li>
+        <li>Reports</li>
+        <li>Configuration</li>
+        <li>Contact Management</li>
+        <li>Notifications</li>
+        <li>Chat with Visitors</li>
+        <li>Application Settings</li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <header>
+        <div class="search-bar">
+          <input type="text" placeholder="Search for anything here...">
+        </div>
+        <div class="actions">
+          <p><b> <span id="currentTime"></span></b></p>
+          <button id="logout-btn">Logout</button>
+        </div>
+      </header>
+      <h1>Dashboard</h1>
+
+      <section class="dashboard">
+        
+        <div class="card">
+          <div class="icon">🛒</div>
+          <h3>Orders</h3>
+          <p>Display and modify the orders details.</p>
+          <a href="#" class="btn">Go to orders page</a>
+        </div>
+        <div class="card">
+          <div class="icon">📦</div>
+          <h3>Products</h3>
+          <p>Display and modify the products details.</p>
+          <a href="#" class="btn">Go to products page</a>
+        </div>
+        <div class="card">
+          <div class="icon">👥</div>
+          <h3>Customers</h3>
+          <p>Display and modify the customers details.</p>
+          <a href="#" class="btn">Go to customers page</a>
+        </div>
+        <div class="card">
+          <div class="icon">👤</div>
+          <h3>Admin</h3>
+          <p>Display and modify the admins details.</p>
+          <a href="./admin.html" class="btn">Go to admin page</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>&copy; 2025 Practice Website. Developed in January 2025.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    function displayCurrentDateTime() {
+        let now = new Date();
+        let formattedDateTime = now.toISOString().slice(0, 19).replace('T', ' ');
+        document.getElementById("currentTime").textContent = formattedDateTime;
+    }
+    displayCurrentDateTime();
+  </script>
+
+  <script src="./scripts/inventory.js"></script>
+</body>
+</html>
