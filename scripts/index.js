@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || {};
 
     // Handle Add to Cart button click
-    document.querySelectorAll(".add-to-cart").forEach(button => {
+    document.querySelectorAll(".add-to-cart-btn").forEach(button => {
         button.addEventListener("click", () => {
             const productId = button.getAttribute("data-product-id");
             const productName = button.getAttribute("data-name");

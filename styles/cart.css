@@ -1,0 +1,34 @@
+#cart-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #5735a0;
+    color: white;
+}
+
+#cart-summary {
+    margin-top: 20px;
+    text-align: right;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #017b01;
+    color: rgb(245, 247, 244);
+    border: none;
+    cursor: pointer;
+}

@@ -649,7 +649,7 @@ body {
 
 
 /* Add to Cart button styles */
-.add-to-cart {
+.add-to-cart-btn {
     display: inline-block;
     padding: 10px 15px;
     background-color: #3d8d69; /* Greenish color to match the section title */
@@ -663,18 +663,18 @@ body {
 }
 
 /* Hover effect for the button */
-.add-to-cart:hover {
+.add-to-cart-btn:hover {
     background-color: #2f6d52; /* Darker green */
     transform: scale(1.05); /* Slight zoom on hover */
 }
 
 /* Active effect for the button */
-.add-to-cart:active {
+.add-to-cart-btn:active {
     transform: scale(0.95); /* Slightly shrink on click */
 }
 
 /* Add some spacing between buttons and other elements */
-.product-card .add-to-cart {
+.product-card .add-to-cart-btn {
     margin-top: 10px;
     text-align: center;
     width: 100%; /* Make the button span the full width of the card */

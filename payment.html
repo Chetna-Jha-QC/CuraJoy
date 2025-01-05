@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuraJoy - seasonessentials</title>
+    <link rel="icon" href="./assets/CuraJoy-logo-transparent.png" type="logo">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/payment.css">
+</head>
+<body class="light-theme"> <!-- Default is light theme -->
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- First Section -->
+            <div class="header-section-1">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./assets/CuraJoy-logo-transparent.png" alt="CuraJoy Logo" width="100px" height="100px"> <!-- Add your logo image here -->
+                    </a>
+                </div>
+                <div class="location">
+                    <input type="text" id="cityInput" placeholder="Select City 🗺️" autocomplete="on">
+                    <ul id="cityDropdown" class="dropdown-list">
+                        <li data-value="NewDelhi">New Delhi<img src="./assets/new delhi.jpg" alt="delhi" width="50px" height="50px"></li>
+                        <li data-value="Mumbai">Mumbai<img src="./assets/mumbai.jpg" alt="mumbai" width="50px" height="50px"></li>
+                        <li data-value="Bangalore">Bangalore<img src="./assets/banglore.jpg" alt="banglore" width="50px" height="50px"></li>
+                        <li data-value="Chennai">Chennai<img src="./assets/chennai.jpg" alt="chennai" width="50px" height="50px"></li>
+                    </ul>
+                </div>
+                
+                <div class="website-name">
+                    <h1>CuraJoy</h1>
+                </div>
+                <div class="theme-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="themeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="auth">
+                    <button id="loginSignupBtn">Login</button>
+                </div>
+                <div class="cart">
+                    <a href="cart.html"><img src="./assets/cart.png" alt="Cart" width="50px" height="50px"> <!-- Add your cart icon image here --></a>
+                </div>
+            </div>
+
+            <!-- Second Section -->
+            <div class="header-section-2">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search Products">
+                </div>
+                <div class="upload-prescription">
+                    <input type="file" id="prescriptionUpload" />
+                    <label for="prescriptionUpload">Upload Prescription</label>
+                </div>
+                <div class="random-offer">
+                    <span>New Year Special Offer</span>
+                </div>
+            </div>
+
+            <!-- Third Section (Nav-bar) -->
+            <div class="navbar">
+                <ul>
+                    <li><a href="#">Medicine</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Diabetes</a></li>
+                            <li><a href="#">HeartCare</a></li>
+                            <li><a href="#">StomachCare</a></li>
+                            <li><a href="#">LiverCare</a></li>
+                            <li><a href="#">Bone, Joints and Muscles</a></li>
+                            <li><a href="#">KidneyCare</a></li>
+                            <li><a href="#">DermaCare</a></li>
+                            <li><a href="#">Respiratory</a></li>
+                            <li><a href="#">EyeCare</a></li>
+                            <li><a href="#">Medicine Index</a></li>
+                        <!--  -->
+                        </ul>
+                    </li>
+                    <li><a href="./seasonessentials.html">Season Essentials</a></li>
+                    <li><a href="#">Vitamins, Nutrients, Drinks</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Vitamin A</a></li>
+                            <li><a href="#">Vitamin B</a></li>
+                            <li><a href="#">Vitamin C</a></li>
+                            <li><a href="#">Vitamin D</a></li>
+                            <li><a href="#">Vitamin K</a></li>
+                            <li><a href="#">Multivitamins</a></li>
+                            <li><a href="#">Gummies Vitamin</a></li>
+                            <li><a href="#">Vegan</a></li>
+                            <li><a href="#">Omega And FishOil</a></li>
+                            <li><a href="#">Calcium</a></li>
+                            <li><a href="#">Minerals</a></li>
+                            <li><a href="#">Hair&Skin Supplements</a></li>
+                            <li><a href="#">Speciality Supplements</a></li>
+                            <li><a href="#">Global Supplements</a></li>
+                            <li><a href="#">GreenTea & Herbal Tea</a></li>
+                            <li><a href="#">Adult Daily Nutrition</a></li>
+                            <li><a href="#">Kids(2-15yrs)</a></li>
+                            <li><a href="#">Elderly</a></li>
+                            <li><a href="#">Diabetic</a></li>
+                            <li><a href="#">Green Coffee</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Health</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Anti-Pollution</a></li>
+                            <li><a href="#">Fitness Supplements</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Elderly and Baby</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Old-age Care</a></li>
+                            <li><a href="#">Baby-care</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="firstaid.html">First-Aid</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="title">Payment Page</h1>
+    
+        <div class="payment-page">
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h2>Your Order</h2>
+                <ul class="order-items">
+                    <li><span>Caffè Macchiato</span> <span>₹90</span></li>
+                    <li><span>Dosa</span> <span>₹30</span></li>
+                    <li><span>Dosa</span> <span>₹30</span></li>
+                </ul>
+                <p class="total-price"><strong>Total Price:</strong> ₹<span>150.00</span></p>
+            </div>
+    
+            <!-- Vertical Divider -->
+            <div class="verticalLine"></div>
+    
+            <!-- Billing Details Form -->
+            <div class="billing-details">
+                <h2>Billing Details</h2>
+                <form id="payment-form">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+    
+                    <label for="address">Address</label>
+                    <textarea id="address" placeholder="Enter your address" required></textarea>
+    
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" placeholder="1111-2222-3333-4444" required>
+    
+                    <label for="expiry">Expiry Date</label>
+                    <input type="month" id="expiry" required>
+    
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" placeholder="123" required>
+    
+                    <button type="submit" id="pay-now">Pay Now</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+
+    <!-- Footer -->
+ <footer class="footer">
+    <!-- Column 1: Know Us -->
+    <div class="footer-column">
+        <h3>Know Us</h3>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Press Coverage</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Business Partnership</a></li>
+            <li><a href="#">Become a Health Partner</a></li>
+            <li><a href="#">Corporate Governance</a></li>
+        </ul>
+    </div>
+
+    <!-- Column 2: Our Policies -->
+    <div class="footer-column">
+        <h3>Our Policies</h3>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Editorial Policy</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">IP Policy</a></li>
+            <li><a href="#">Grievance Redressal Policy</a></li>
+            <li><a href="#">Fake Jobs and Fraud Disclaimer</a></li>
+        </ul>
+    </div>
+
+    <!-- Column 3: Our Services -->
+    <div class="footer-column">
+        <h3>Our Services</h3>
+        <ul>
+            <li><a href="#">Order Medicines</a></li>
+            <li><a href="#">Book Lab Tests</a></li>
+            <li><a href="#">Consult a Doctor</a></li>
+            <li><a href="#">Ayurveda Articles</a></li>
+            <li><a href="#">Hindi Articles</a></li>
+            <li><a href="#">Care Plan</a></li>
+        </ul>
+    </div>
+
+    <!-- Column 4: Connect -->
+    <div class="footer-column connect">
+        <h3>Connect</h3>
+        <p>Social Links</p>
+        <div class="social-icons">
+            <a href="#"><img src="./assets/icon/facebook.png" alt="Facebook" width="5px" height="5px"></a>
+            <a href="#"><img src="./assets/icon/instagram.jpg" alt="Instagram"></a>
+            <a href="#"><img src="./assets/icon/x.png" alt="X"></a>
+            <a href="#"><img src="./assets/icon/yt.png" alt="YouTube"></a>
+            <a href="#"><img src="./assets/icon/linkedIn.png" alt="LinkedIn"></a>
+            <a href="#"><img src="./assets/icon/medium.png" alt="Medium"></a>
+        </div>
+        <p>Want daily dose of health?</p>
+        <button class="signup-button">Subscribe</button>
+    </div>
+
+    <!-- Column 5: Download App -->
+    <div class="footer-column">
+        <h3>Download App</h3>
+        <a href="#"><img src="./assets/icon/apps.png" alt="Google Play"></a>
+    </div>
+
+    <p>&copy; 2025 Practice Website Created by Chetna Jha. Developed in January 2025.</p>
+
+</footer>
+
+<!-- scripts -->
+<script src="./index.html"></script>
+<script src="./scripts/dark-light.js"></script>
+<script src="./scripts/header.js"></script>
+<script src="./styles/payment.css"></script>
+
+</body>
+</html>

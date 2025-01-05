@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .side-panel {
+    width: 250px;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+  }
+  .categories, .filters {
+    margin-bottom: 20px;
+  }
+  .categories h3, .filters h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .categories ul, .filters ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  .categories li {
+    cursor: pointer;
+    margin: 5px 0;
+  }
+  .show-all {
+    color: #ed5204;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+  }
+  .filter-section {
+    margin-top: 20px;
+  }
+  .filter-section input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  .filter-section ul {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+  .filter-section li {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+  .filter-section input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  h6 {
+    font-size: 12px;
+    color: #6c9f6c;
+    font-weight: normal;
+}
+li {
+  font-size: 12px; /* Decreased size */
+}
+/* Initially hide the extra list items */
+.hidden-item {
+  display: none;
+}
+
+/* Style for the 'Show All' button */
+.show-all {
+  cursor: pointer;
+  font-weight: bold;
+  color: blue;
+  text-decoration: underline;
+}
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+/* Container Setup */
+.container {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Categories Section */
+.categories {
+  width: 20%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.categories ul {
+  list-style: none;
+}
+
+.categories li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.categories li strong {
+  color: #e74c3c;
+}

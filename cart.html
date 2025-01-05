@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuraJoy - seasonessentials</title>
+    <link rel="icon" href="./assets/CuraJoy-logo-transparent.png" type="logo">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/seasonessentials.css">
+    <link rel="stylesheet" href="./styles/cart.css">
+    </head>
+<body class="light-theme">
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- First Section -->
+            <div class="header-section-1">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./assets/CuraJoy-logo-transparent.png" alt="CuraJoy Logo" width="100px" height="100px"> <!-- Add your logo image here -->
+                    </a>
+                </div>
+                <div class="location">
+                    <input type="text" id="cityInput" placeholder="Select City 🗺️" autocomplete="off">
+                    <ul id="cityDropdown" class="dropdown-list">
+                        <li data-value="NewDelhi">New Delhi<img src="./assets/new delhi.jpg" alt="delhi" width="50px" height="50px"></li>
+                        <li data-value="Mumbai">Mumbai<img src="./assets/mumbai.jpg" alt="mumbai" width="50px" height="50px"></li>
+                        <li data-value="Bangalore">Bangalore<img src="./assets/banglore.jpg" alt="banglore" width="50px" height="50px"></li>
+                        <li data-value="Chennai">Chennai<img src="./assets/chennai.jpg" alt="chennai" width="50px" height="50px"></li>
+                    </ul>
+                </div>
+                
+                <div class="website-name">
+                    <h1 style="color: green;">CuraJoy</h1>
+                </div>
+                <div class="theme-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="themeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="auth">
+                    <button id="loginSignupBtn">Login</button>
+                </div>
+                <div class="cart">
+                    <a href="cart.html"><img src="./assets/cart.png" alt="Cart" width="50px" height="50px"></a>
+                </div>
+            </div>
+            <!-- Third Section (Nav-bar) -->
+            <div class="navbar">
+                <ul>
+                    <li><a href="#">Medicine</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Diabetes</a></li>
+                            <li><a href="#">HeartCare</a></li>
+                            <li><a href="#">StomachCare</a></li>
+                            <li><a href="#">LiverCare</a></li>
+                            <li><a href="#">Bone, Joints and Muscles</a></li>
+                            <li><a href="#">KidneyCare</a></li>
+                            <li><a href="#">DermaCare</a></li>
+                            <li><a href="#">Respiratory</a></li>
+                            <li><a href="#">EyeCare</a></li>
+                            <li><a href="#">Medicine Index</a></li>
+                        <!--  -->
+                        </ul>
+                    </li>
+                    <li><a href="./seasonessentials.html">Season Essentials</a></li>
+                    <li><a href="#">Vitamins, Nutrients, Drinks</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Vitamin A</a></li>
+                            <li><a href="#">Vitamin B</a></li>
+                            <li><a href="#">Vitamin C</a></li>
+                            <li><a href="#">Vitamin D</a></li>
+                            <li><a href="#">Vitamin K</a></li>
+                            <li><a href="#">Multivitamins</a></li>
+                            <li><a href="#">Gummies Vitamin</a></li>
+                            <li><a href="#">Vegan</a></li>
+                            <li><a href="#">Omega And FishOil</a></li>
+                            <li><a href="#">Calcium</a></li>
+                            <li><a href="#">Minerals</a></li>
+                            <li><a href="#">Hair&Skin Supplements</a></li>
+                            <li><a href="#">Speciality Supplements</a></li>
+                            <li><a href="#">Global Supplements</a></li>
+                            <li><a href="#">GreenTea & Herbal Tea</a></li>
+                            <li><a href="#">Adult Daily Nutrition</a></li>
+                            <li><a href="#">Kids(2-15yrs)</a></li>
+                            <li><a href="#">Elderly</a></li>
+                            <li><a href="#">Diabetic</a></li>
+                            <li><a href="#">Green Coffee</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Health</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Anti-Pollution</a></li>
+                            <li><a href="#">Fitness Supplements</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Elderly and Baby</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Old-age Care</a></li>
+                            <li><a href="#">Baby-care</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="firstaid.html">First-Aid</a></li>
+                </ul>
+            </div>
+        </div>    
+    </header>
+
+    <div id="careplan_img">
+        <img style="width: 100%;" src="./assets/fullb.webp" alt="">
+    </div>
+    <!-- Body  -->
+
+
+    <h1>Your Shopping Cart</h1>
+    <hr>
+
+    <div id="cart-container">
+        <!-- <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table> -->
+         <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <p>Total Items: <span id="total-items">0</span></p>
+    <p>Total Price: ₹<span id="total-price">0.00</span></p>
+        <div id="cart-summary">
+            <h2>Total: ₹<span id="cart-total">0</span></h2>
+            <button onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+
+<!-- Footer -->
+ <footer class="footer">
+    <!-- Column 1: Know Us -->
+    <div class="footer-column">
+        <h3>Know Us</h3>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Press Coverage</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Business Partnership</a></li>
+            <li><a href="#">Become a Health Partner</a></li>
+            <li><a href="#">Corporate Governance</a></li>
+        </ul>
+    </div>
+
+    <!-- Column 2: Our Policies -->
+    <div class="footer-column">
+        <h3>Our Policies</h3>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Editorial Policy</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">IP Policy</a></li>
+            <li><a href="#">Grievance Redressal Policy</a></li>
+            <li><a href="#">Fake Jobs and Fraud Disclaimer</a></li>
+        </ul>
+    </div>
+
+    <!-- Column 3: Our Services -->
+    <div class="footer-column">
+        <h3>Our Services</h3>
+        <ul>
+            <li><a href="#">Order Medicines</a></li>
+            <li><a href="#">Book Lab Tests</a></li>
+            <li><a href="#">Consult a Doctor</a></li>
+            <li><a href="#">Ayurveda Articles</a></li>
+            <li><a href="#">Hindi Articles</a></li>
+            <li><a href="#">Care Plan</a></li>
+        </ul>
+    </div>
+
+    <!-- Column 4: Connect -->
+    <div class="footer-column connect">
+        <h3>Connect</h3>
+        <p>Social Links</p>
+        <div class="social-icons">
+            <a href="#"><img src="./assets/icon/facebook.png" alt="Facebook" width="5px" height="5px"></a>
+            <a href="#"><img src="./assets/icon/instagram.jpg" alt="Instagram"></a>
+            <a href="#"><img src="./assets/icon/x.png" alt="X"></a>
+            <a href="#"><img src="./assets/icon/yt.png" alt="YouTube"></a>
+            <a href="#"><img src="./assets/icon/linkedIn.png" alt="LinkedIn"></a>
+            <a href="#"><img src="./assets/icon/medium.png" alt="Medium"></a>
+        </div>
+        <p>Want daily dose of health?</p>
+        <button class="signup-button">Subscribe</button>
+    </div>
+
+    <!-- Column 5: Download App -->
+    <div class="footer-column">
+        <h3>Download App</h3>
+        <a href="#"><img src="./assets/icon/apps.png" alt="Google Play"></a>
+    </div>
+
+    <p>&copy; 2025 Practice Website Created by Chetna Jha. Developed in January 2025.</p>
+
+</footer>
+
+<!-- scripts -->
+<script src="./index.html"></script>
+<script src="./scripts/loginStatus.js"></script>
+<script src="./scripts/dark-light.js"></script>
+<script src="./scripts/cart.js"></script>
+
+</body>
+</html>
