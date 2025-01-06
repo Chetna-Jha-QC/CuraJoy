@@ -1,9 +1,7 @@
 # CuraJoy
 CuraJoy: Frontend and backend for a pharmacy website
 
-# Mini Commerce App
-
-_A simple multi-page e-commerce application for learning web development with HTML, CSS, and JavaScript._
+_A simple multi-page e-commerce pharmacy application inspired from 1mg.com for learning web development with HTML, CSS, and JavaScript._
 
 ## Table of Contents
 
