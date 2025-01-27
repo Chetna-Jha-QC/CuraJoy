@@ -57,6 +57,7 @@ password - Admin@1234
 
 ---
 ## File Structure
+```
 CuraJoy - A online pharmacy website inspired from 1mg.com /
 │
 ├── index.html                     # Home page with product listings
@@ -89,3 +90,4 @@ CuraJoy - A online pharmacy website inspired from 1mg.com /
 ├── assets/                        # Images and other static assets
 │
 └── README.md                      # Project documentation
+```
