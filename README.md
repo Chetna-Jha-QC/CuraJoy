@@ -23,6 +23,7 @@ The app includes the following pages:
 - `seasonessentials.html`
 - `firstaid.html`
 - `cart.html`
+- `payment.html`
 - `admin.html`
 - `inventory.html`
 
