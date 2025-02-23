@@ -28,7 +28,9 @@ The app includes the following pages:
 - `inventory.html`
 
 To access the admin.html use the following credentials
+
 username - admin@empher.com
+
 password - Admin@1234
 
 ---
